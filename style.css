@@ -1,0 +1,242 @@
+@keyframes rolling {
+    0%{
+        transform: translateY(0);
+    }
+    33%{
+        transform: translateY(-25%);
+    }
+    66%{
+        transform: translateY(-50%);
+    }
+    100%{
+        transform: translateY(-75%);
+    }
+}
+
+body, h1, h2, h3, h4, p, ul, dl, dd{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    font-size: 100%;
+    font-weight: normal;
+}
+
+ul{
+    list-style: none;
+}
+
+h1, h2, h3, h4{
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+body{
+    background-color: #111;
+    color: #999;
+    font-size: 25px;
+}
+
+.mainbackground{
+    background-image: url(images/main1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 56.25% /* 16:9비율 */
+}
+
+.profile{
+    padding: 10%;
+}
+
+.profile-header,
+.profile-section{
+    padding-bottom: 10%;
+}
+
+.profile-section h2{
+    border-top: 3px solid;
+    color: orangered;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0em;
+    background-color: #111;
+    box-shadow: 0 0 15px 15px #111;
+}
+.name{
+    font-size: 80px;
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 40px;
+    font-family: 'Yeon Sung', cursive;
+    position: sticky;
+    top: -1.8em;
+    background-color: #111;
+    box-shadow: 0 0 10px 10px #111;
+}
+.name-job{
+    display: inline-block;
+    color: white;
+    vertical-align: top;
+    height: 1.5em;
+    overflow: hidden;
+    padding-right: 0.5em;
+    position: relative;
+}
+
+.name-job::after{
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: -1em;
+    box-shadow: inset 0 0 25px 25px #111;
+}
+
+.name-job-list{
+    animation-name: rolling;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.name-title{
+    font-size: 1.5em;
+    line-height: 1;
+    color: skyblue;
+    margin-top: 25px;
+    margin-left: -0.2em;
+}
+
+.icons{
+    margin: 30px 0;
+}
+
+.icons a{
+    background-image: url('images/iconss.png');
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-indent: -9999px;
+    opacity: 0.5;
+}
+
+.icons a.twitter { background-position: left; }
+.icons a.facebook { background-position: center; }
+.icons a.instagram { background-position: right; }
+
+.icons a:hover { background-position-y: bottom;
+                 opacity: 1;
+}
+
+.timeline{
+    font-size: 1.3rem;
+    color: #777;
+}
+
+.timeline h3{
+    color: orange;
+}
+
+.timeline li{
+    padding-bottom: 30px;
+}
+
+.timeline li:last-child{
+    padding-bottom: 0;
+}
+
+.timeline li h3{
+    color: orange;
+    float: left;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+    margin-right: 0.5em;
+
+}
+
+.graph li{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(231,241,61,1) 0%, rgba(0,212,255,1) 64%);
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0.4em 0;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+
+.graph li::before{
+    content: attr(data-score);
+    float: right;
+}
+
+.graph li[data-score="100%"] { width: 100%; }
+.graph li[data-score="90%"] { width: 90%; }
+.graph li[data-score="80%"] { width: 80%; }
+.graph li[data-score="70%"] { width: 70%; }
+.graph li[data-score="60%"] { width: 60%; }
+.graph li[data-score="50%"] { width: 50%; }
+.graph li[data-score="40%"] { width: 40%; }
+.graph li[data-score="30%"] { width: 30%; }
+.graph li[data-score="20%"] { width: 20%; }
+.graph li[data-score="10%"] { width: 10%; }
+
+.licenselist h4{
+    color: orange;
+    float: left;
+    width: 5em;
+}
+
+.list dt{
+    color: orange;
+    float: left;
+    width: 5em;
+}
+
+.list dd{
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .mainbackground{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 60vw;
+        height: 100vh;
+        padding: 0;
+
+    }
+
+    .profile{
+        margin-left: 60vw;
+    }
+    .name{
+        font-size: 4vw;
+    }
+    .name-title{
+        font-size: 1.8em;
+    }
+
+    .timeline{
+        margin: 0 -10px;
+    }
+
+    .timeline li{
+        width: 50%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .timeline li:nth-child(even){
+        margin-left: auto;
+        margin-top: -50px;
+        margin-bottom: -50px;
+    }
+}
